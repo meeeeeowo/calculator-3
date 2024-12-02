@@ -65,16 +65,15 @@ ul li:last-child {
 }
 /* Подсветка при наведении на кнопку */
 li:hover {
-    background-color: #FFCCEA; 
-    color: #000;  /* Черный текст для контраста */
-    cursor: pointer;  /* Указатель при наведении */
-    transition: background-color 0.3s ease;  /* Плавное изменение фона */
+    background-color: #FFCCEA;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Подсветка для нажатой кнопки */
 li.active {
-    background-color: #EFB6C8;  
-    color: white;  /* Белый текст */
+    background-color: #EFB6C8;
+    color: white;
 }
-js: var product = document.getElementById("product");
-product.innerText = "*";
+
