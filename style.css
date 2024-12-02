@@ -54,15 +54,16 @@ ul li:last-child {
 	width: 120px;
 }
 .signature {
-	color: #2f3737;
-	font-family: 'Patrick Hand SC';
-	font-size: 0.70rem;
-	text-align: right;
-	position: relative;
-	top: 4px;
-	right: 7px;
-	z-index: -1;
+    color: #2f3737;
+    font-family: 'Patrick Hand SC';
+    font-size: 0.6rem;  /* Уменьшаем размер */
+    text-align: center;  /* Центрируем текст */
+    position: absolute;
+    bottom: 20px;  /* Увеличиваем значение, чтобы опустить подпись */
+    left: 50%;
+    transform: translateX(-50%);  /* Центрируем по горизонтали */
 }
+
 /* Подсветка при наведении на кнопку */
 li:hover {
     background-color: #FFCCEA;
