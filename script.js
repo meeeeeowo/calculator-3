@@ -1,6 +1,5 @@
 var product = document.getElementById("product");
 product.innerText = "*";
-// Получаем все кнопки калькулятора
 // Получаем элементы
 const result = document.querySelector('.result');
 const buttons = document.querySelectorAll('ul li');
@@ -19,7 +18,24 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.innerText;
 
-   let resultElement = document.querySelector(".result"); // Результат калькулятора
+        if (value === "=") {
+            try {
+                result.innerText = eval(result.innerText); // Выполняем операцию
+            } catch (e) {
+                result.innerText = "Ошибка";
+            }
+        } else if (value === "C") {
+            result.innerText = "0";  // Очистка
+        } else if (value === "+/-") {
+            result.innerText = result.innerText.startsWith("-") 
+                ? result.innerText.substring(1) 
+                : "-" + result.innerText; // Меняем знак
+        } else {
+            updateResult(value); // Обновляем результат
+        }
+    });
+});
+let resultElement = document.querySelector(".result"); // Результат калькулятора
 let currentInput = "0";  // Начальный ввод
 let isResultDisplayed = false;  // Флаг для отображения результата
 
@@ -63,5 +79,6 @@ document.querySelectorAll("ul li").forEach(button => {
         resultElement.innerText = currentInput;
     });
 });
+
 
 
